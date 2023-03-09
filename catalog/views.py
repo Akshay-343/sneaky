@@ -212,7 +212,7 @@ def password_reset_request(request):
                     }
                     email = render_to_string(email_template_name, c)
                     try:
-                        send_mail(subject, email, 'locallibrary@gmail.com', [user.email], fail_silently=False)
+                        send_mail(subject, email, 'akkicstm03@gmail.com', [user.email], fail_silently=False)
                         sent = True
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
