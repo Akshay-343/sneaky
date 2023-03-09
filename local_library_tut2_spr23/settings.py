@@ -135,8 +135,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'pythonanywhere'
-EMAIL_HOST_PASSWORD = 'dzeerkcqchsrnxix'
+EMAIL_HOST_PASSWORD = 'vmnocqirythxatrr'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-SERVER_EMAIL = 'locallibrary3900@gmail.com'
+SERVER_EMAIL = 'akkicstm03@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
