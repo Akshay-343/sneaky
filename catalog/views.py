@@ -193,17 +193,10 @@ def password_reset_request(request):
             if associated_users.exists():
                 for user in associated_users:
                     subject = "Password Reset Requested"
-                    subject = '{}, the email subject'.format("this can be a form field value or user info")
-                    message = 'this is the message "{}"'.format("message  youwant  to send")
-                    user = request.user  # request was passed to the method as a parameter for the view
-                    user_email = user.email  # pull user’s email out of the user record
-                    # try to send the e-mail – note you can send to multiple users – this just sends
-                    # to one user.
-
                     email_template_name = "registration/password_reset_email.txt"
                     c = {
                         "email": user.email,
-                        'domain': '127.0.0.1:8000',
+                        'domain': 'akki03.pythonanywhere.com',
                         'site_name': 'Website',
                         "uid": urlsafe_base64_encode(force_bytes(user.pk)),
                         "user": user,
@@ -213,7 +206,6 @@ def password_reset_request(request):
                     email = render_to_string(email_template_name, c)
                     try:
                         send_mail(subject, email, 'akkicstm03@gmail.com', [user.email], fail_silently=False)
-                        sent = True
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
                     return redirect("/password_reset/done/")
