@@ -32,9 +32,7 @@ data-bs-target="#navbarSupportedContent"
  <a class="nav-link" href="{% url 'author_list' %}">All Authors</a>
  </li>
  
- <li class="nav-item">
- <a class="nav-link" href="{% url 'password_reset' %}">Password Reset</a>
- </li>
+
  {% if user.is_authenticated %}
     <li><a class="nav-link" href="{% url 'my_books' %}">My Books</a></li>
      {% if user.is_superuser %}
