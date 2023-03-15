@@ -209,6 +209,8 @@ def password_reset_request(request):
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
                     return redirect("/password_reset/done/")
+            else:
+                messages.error(request, (" There is no account associated with this Email-ID"))
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="registration/password_reset_form.html",
                   context={"password_reset_form": password_reset_form})
